@@ -1,0 +1,11 @@
+c:\users\johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\bin\Debug\VR_Research_Project.exe.config
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.csprojResolveAssemblyReference.cache
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.Form1.resources
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.Properties.Resources.resources
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.csproj.GenerateResource.Cache
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\bin\Debug\ResearchDatabase.mdf
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\bin\Debug\ResearchDatabase_log.ldf
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\bin\Debug\VR_Research_Project.exe
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\bin\Debug\VR_Research_Project.pdb
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.exe
+C:\Users\Johns\documents\visual studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.pdb
