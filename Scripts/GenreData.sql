@@ -1,0 +1,17 @@
+﻿SET IDENTITY_INSERT [dbo].[Genre] ON
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (1, N'360-Degree Video')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (2, N'Game')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (3, N'Racing Simulator')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (4, N'Roleplaying')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (5, N'Non-Interactive')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (6, N'Interactive')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (7, N'Horror')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (8, N'Flight Simulator')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (9, N'Strategy')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (10, N'Shooter')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (11, N'Retail Tool')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (12, N'Puzzle')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (13, N'Educational')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (14, N'Multiplayer')
+INSERT INTO [dbo].[Genre] ([Id], [Description]) VALUES (15, N'Industrial Tool')
+SET IDENTITY_INSERT [dbo].[Genre] OFF
