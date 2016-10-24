@@ -1,8 +1,0 @@
-﻿CREATE TABLE [dbo].[ApplicationReview]
-(
-	[ApplicationId] INT NOT NULL , 
-    [ReviewId] INT NOT NULL, 
-    PRIMARY KEY ([ReviewId], [ApplicationId]), 
-    CONSTRAINT [FK_ApplicationReview_ToApplication] FOREIGN KEY ([ApplicationId]) REFERENCES [Application]([Id]), 
-    CONSTRAINT [FK_ApplicationReview_ToReview] FOREIGN KEY ([ReviewId]) REFERENCES [Review]([Id])
-)

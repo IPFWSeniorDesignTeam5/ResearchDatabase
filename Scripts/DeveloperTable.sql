@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[Developer]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Name] VARCHAR(250) NULL
-)
