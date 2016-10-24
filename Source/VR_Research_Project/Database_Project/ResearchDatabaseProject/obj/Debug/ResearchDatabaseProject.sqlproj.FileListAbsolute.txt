@@ -1,0 +1,9 @@
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.dacpac
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.dll
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.pdb
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.dll
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.pdb
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\Model.xml
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\refactor.xml
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\postdeploy.sql
+C:\Users\DanJa\OneDrive\Documents\IPFW\Senior Design\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\predeploy.sql
