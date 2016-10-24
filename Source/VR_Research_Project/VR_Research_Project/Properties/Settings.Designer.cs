@@ -26,8 +26,8 @@ namespace VR_Research_Project.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ResearchDatab" +
-            "ase.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ResearchDatab" +
+            "ase.mdf;Initial Catalog=ResearchDatabase;Integrated Security=True")]
         public string ResearchDatabaseConnectionString {
             get {
                 return ((string)(this["ResearchDatabaseConnectionString"]));
