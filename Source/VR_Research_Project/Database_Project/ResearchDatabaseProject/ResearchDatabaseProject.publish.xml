@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>919736C1D894D5981971226E06138540_\RESEARCHDATABASE\SOURCE\VR_RESEARCH_PROJECT\VR_RESEARCH_PROJECT\BIN\DEBUG\RESEARCHDATABASE.MDF</TargetDatabaseName>
+    <TargetDatabaseName>ResearchDatabase</TargetDatabaseName>
     <DeployScriptFileName>ResearchDatabaseProject.sql</DeployScriptFileName>
     <TargetConnectionString>Data Source=(localdb)\MSSQLLocalDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
