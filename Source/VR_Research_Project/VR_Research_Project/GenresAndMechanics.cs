@@ -31,11 +31,18 @@ namespace VR_Research_Project
         {
             ApplicationId = applicationId;
 
-            if ( objectType == GenreAndMechanicsType.GenreType )
+            if (objectType == GenreAndMechanicsType.GenreType)
+            {
                 MainGridView.DataSource = GenreBindingSource;
+                newLabel.Text = "Add Genre:";
+            }
             else
+            {
                 MainGridView.DataSource = MechanicBindingSource;
+                newLabel.Text = "Add Mechanic:";
+            }
 
+            AddButton.Enabled = true;
             m_kType = objectType;
 
             RefreshData();
@@ -70,7 +77,7 @@ namespace VR_Research_Project
 
                     lk_tab.AcceptChanges();
 
-                    lk_adapt.Update(lk_tab);
+                    lk_adapt.Update(researchDatabaseDataSet);
                 }
                 else
                 {
@@ -80,16 +87,23 @@ namespace VR_Research_Project
                     lk_adapt.Fill(lk_tab);
 
                     if (boundItem.Selected == 1)
-                        lk_adapt.Insert(ApplicationId, boundItem.MechanicId);
+                        lk_adapt.Insert(ApplicationId, boundItem.Id);
                     else
-                        lk_adapt.Delete(ApplicationId, boundItem.MechanicId);
+                        lk_adapt.Delete(ApplicationId, boundItem.Id);
                     
-                    lk_adapt.Update(lk_tab);
+                    lk_adapt.Update(researchDatabaseDataSet);
                 }
                 
                 RefreshData();
             }
+        }
 
+        private void AddButton_clicked(object sender, EventArgs e)
+        {
+            NewGenreMechanic lk_new = new NewGenreMechanic();
+            lk_new.Initialize(m_kType, researchDatabaseDataSet);
+            lk_new.ShowDialog();
+            RefreshData();
         }
     }
 }

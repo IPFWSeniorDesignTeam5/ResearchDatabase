@@ -2,8 +2,9 @@
     [Id]                   INT           IDENTITY (1, 1) NOT NULL,
     [Reviewer]             VARCHAR (50)  NOT NULL,
     [TimeSpent]            INT           NULL,
-    [Description]          VARCHAR (MAX) NULL,
-    [MechanicsDescription] VARCHAR (MAX) NULL,
+    [Rating] INT NOT NULL, 
+    [BottomLine] VARCHAR(500) NOT NULL, 
+    [ReviewDate] DATE NOT NULL DEFAULT getdate(), 
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

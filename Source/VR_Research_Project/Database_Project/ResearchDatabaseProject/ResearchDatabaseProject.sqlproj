@@ -72,6 +72,10 @@
     <Build Include="dbo\Tables\ApplicationGenre.sql" />
     <Build Include="dbo\Tables\ApplicationMechanic.sql" />
     <Build Include="dbo\Tables\ApplicationReview.sql" />
+    <Build Include="dbo\Tables\AppPro.sql" />
+    <Build Include="dbo\Tables\AppCon.sql" />
+    <Build Include="dbo\Tables\ReviewPro.sql" />
+    <Build Include="dbo\Tables\ReviewCon.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ResearchDatabaseProject.publish.xml" />
@@ -82,5 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\Script.PostDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ResearchDatabaseProject.refactorlog" />
   </ItemGroup>
 </Project>

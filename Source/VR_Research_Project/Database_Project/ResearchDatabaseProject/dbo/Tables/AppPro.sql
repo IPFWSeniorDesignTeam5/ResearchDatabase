@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[AppPro]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Description] VARCHAR(250) NOT NULL
+)

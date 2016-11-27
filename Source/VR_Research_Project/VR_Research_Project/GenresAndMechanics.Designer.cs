@@ -31,17 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.GenreAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ApplicationGenreRelationTableAdapter();
             this.MainGridView = new System.Windows.Forms.DataGridView();
+            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
             this.MechanicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MechanicAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ApplicationMechanicRelationTableAdapter();
-            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.newLabel = new System.Windows.Forms.Label();
+            this.AddButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MechanicBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GenreAdapter
@@ -52,6 +56,9 @@
             // 
             this.MainGridView.AllowUserToAddRows = false;
             this.MainGridView.AllowUserToDeleteRows = false;
+            this.MainGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainGridView.AutoGenerateColumns = false;
             this.MainGridView.BackgroundColor = System.Drawing.Color.White;
             this.MainGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -60,31 +67,11 @@
             this.descriptionDataGridViewTextBoxColumn,
             this.applicationIdDataGridViewTextBoxColumn});
             this.MainGridView.DataSource = this.GenreBindingSource;
-            this.MainGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainGridView.Location = new System.Drawing.Point(0, 0);
             this.MainGridView.Name = "MainGridView";
-            this.MainGridView.Size = new System.Drawing.Size(321, 522);
+            this.MainGridView.Size = new System.Drawing.Size(321, 481);
             this.MainGridView.TabIndex = 0;
             this.MainGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ValueChanged);
-            // 
-            // GenreBindingSource
-            // 
-            this.GenreBindingSource.DataMember = "ApplicationGenreRelation";
-            this.GenreBindingSource.DataSource = this.researchDatabaseDataSet;
-            // 
-            // researchDatabaseDataSet
-            // 
-            this.researchDatabaseDataSet.DataSetName = "ResearchDatabaseDataSet";
-            this.researchDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // MechanicBindingSource
-            // 
-            this.MechanicBindingSource.DataMember = "ApplicationMechanicRelation";
-            this.MechanicBindingSource.DataSource = this.researchDatabaseDataSet;
-            // 
-            // MechanicAdapter
-            // 
-            this.MechanicAdapter.ClearBeforeFill = true;
             // 
             // Selected
             // 
@@ -112,10 +99,62 @@
             this.applicationIdDataGridViewTextBoxColumn.Name = "applicationIdDataGridViewTextBoxColumn";
             this.applicationIdDataGridViewTextBoxColumn.Visible = false;
             // 
+            // GenreBindingSource
+            // 
+            this.GenreBindingSource.DataMember = "ApplicationGenreRelation";
+            this.GenreBindingSource.DataSource = this.researchDatabaseDataSet;
+            // 
+            // researchDatabaseDataSet
+            // 
+            this.researchDatabaseDataSet.DataSetName = "ResearchDatabaseDataSet";
+            this.researchDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // MechanicBindingSource
+            // 
+            this.MechanicBindingSource.DataMember = "ApplicationMechanicRelation";
+            this.MechanicBindingSource.DataSource = this.researchDatabaseDataSet;
+            // 
+            // MechanicAdapter
+            // 
+            this.MechanicAdapter.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.newLabel);
+            this.panel1.Controls.Add(this.AddButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 487);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(321, 35);
+            this.panel1.TabIndex = 1;
+            // 
+            // newLabel
+            // 
+            this.newLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.newLabel.Location = new System.Drawing.Point(191, 11);
+            this.newLabel.Name = "newLabel";
+            this.newLabel.Size = new System.Drawing.Size(93, 13);
+            this.newLabel.TabIndex = 1;
+            this.newLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.AddButton.Enabled = false;
+            this.AddButton.Font = new System.Drawing.Font("Meiryo UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(288, 0);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(33, 35);
+            this.AddButton.TabIndex = 0;
+            this.AddButton.Text = "+";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_clicked);
+            // 
             // GenresAndMechanics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.MainGridView);
             this.Name = "GenresAndMechanics";
             this.Size = new System.Drawing.Size(321, 522);
@@ -123,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GenreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MechanicBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -139,5 +179,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn applicationIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Label newLabel;
     }
 }

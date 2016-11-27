@@ -19,14 +19,18 @@ namespace VR_Research_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'researchDatabaseDataSet.Platform' table. You can move, or remove it, as needed.
-            this.platformTableAdapter.Fill(this.researchDatabaseDataSet.Platform);
-            // TODO: This line of code loads data into the 'researchDatabaseDataSet.ApplicationGenre' table. You can move, or remove it, as needed.
-            this.applicationGenreTableAdapter.Fill(this.researchDatabaseDataSet.ApplicationGenre);
+            RefreshData();
+        }
 
-            this.developerTableAdapter.Fill(this.researchDatabaseDataSet.Developer);
-                        
-            this.applicationTableAdapter.Fill(this.researchDatabaseDataSet.Application);
+        private void RefreshData()
+        {
+            platformTableAdapter.Fill(researchDatabaseDataSet.Platform);
+
+            applicationGenreTableAdapter.Fill(researchDatabaseDataSet.ApplicationGenre);
+
+            developerTableAdapter.Fill(researchDatabaseDataSet.Developer);
+
+            applicationTableAdapter.Fill(researchDatabaseDataSet.Application);
 
             if (listBox_Applications.Items.Count > 0)
             {
@@ -43,13 +47,81 @@ namespace VR_Research_Project
 
             GenresControl.SelectApplication(applicationId, GenresAndMechanics.GenreAndMechanicsType.GenreType);
             MechanicsControl.SelectApplication(applicationId, GenresAndMechanics.GenreAndMechanicsType.MechanicsType);
+            AppReviews.SelectApplication(applicationId);
+
+            DeleteApplication.Enabled = true;
         }
 
         private void NewApplicationClicked(object sender, EventArgs e)
         {
             NewApplication lk_new = new NewApplication();
 
-            lk_new.ShowDialog();
+            lk_new.ShowDialog(this);
+
+            RefreshData();
+        }
+
+        private void MainFormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                BindingContext[researchDatabaseDataSet, "Application"].EndCurrentEdit();
+                tableAdapterManager.UpdateAll(researchDatabaseDataSet);
+                researchDatabaseDataSet.AcceptChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update Error", "Failed to update data. " + ex.Message);
+                e.Cancel = true;
+            }
+        }
+
+        private void ValidateGeneralTab(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteApplication_clicked(object sender, EventArgs e)
+        {
+            DialogResult lk_result = MessageBox.Show("Delete the selected application and all related data?", "Are you sure?", MessageBoxButtons.YesNo);
+
+            if (lk_result == DialogResult.Yes)
+            {
+                applicationTableAdapter.DeleteById((int)listBox_Applications.SelectedValue);
+                applicationTableAdapter.Update(researchDatabaseDataSet);
+                RefreshData();
+                DeleteApplication.Enabled = false;
+            }
+        }
+
+        private void ToolbarButton_clicked( object sender, EventArgs e )
+        {
+            foreach( ToolStripButton button in MainToolStrip.Items )
+            {
+                if (button.Name != ((ToolStripButton)sender).Name)
+                {
+                    button.Checked = false;
+                    button.BackColor = SystemColors.Control;
+                }
+            }
+            
+            switch (((ToolStripButton)sender).Name)
+            {
+                case "ToolstripApplications_button":
+                    ShowView("Applications");
+                    break;
+
+                case "ToolstripReporting_button":
+                    ShowView("Genres/Mechanics");
+                    break;
+
+                default: break;
+            }
+        }
+
+        private void ShowView( string as_view )
+        {
+
         }
     }
 }

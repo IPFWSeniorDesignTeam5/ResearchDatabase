@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[ReviewCon]
+(
+	[ReviewId] INT NOT NULL,
+	[AppConId] INT NOT NULL, 
+	CONSTRAINT [FK_ReviewCon_ToReview] FOREIGN KEY ([ReviewId]) REFERENCES [Review]([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ReviewCon_ToPro] FOREIGN KEY ([AppConId]) REFERENCES [AppCon]([Id]) ON DELETE CASCADE
+)

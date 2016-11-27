@@ -21,16 +21,10 @@ namespace VR_Research_Project
         {
             this.Close();
         }
-
-
+        
         private void NewApplication_Load(object sender, EventArgs e)
         {
-            this.developerTableAdapter.Fill(researchDatabaseDataSet.Developer);
-
-            foreach (var row in researchDatabaseDataSet.Developer)
-            {
-                DeveloperCombobox.Items.Add(row.Name);
-            }
+            developerTableAdapter.Fill(researchDatabaseDataSet.Developer);
         }
 
         private void OKClicked(object sender, EventArgs e)
@@ -50,6 +44,7 @@ namespace VR_Research_Project
             }
 
             string ls_newAppName = NameTextbox.Text;
+            string ls_developerName = DeveloperCombobox.Text;
 
             if (researchDatabaseDataSet.Application.Where(x => x.Name.ToUpper() == ls_newAppName.ToUpper()).Count() > 0)
             {
@@ -60,32 +55,34 @@ namespace VR_Research_Project
             bool newDev = true;
             int newDeveloperId = 0;
 
-            foreach ( var item in DeveloperCombobox.Items )
+            foreach ( DataRowView item in DeveloperCombobox.Items )
             {
-                if (DeveloperCombobox.Text == item.ToString())
+                if (DeveloperCombobox.Text == item.Row["Name"].ToString())
                 {
-                    newDeveloperId = researchDatabaseDataSet.Developer.Where(x => x.Name == DeveloperCombobox.Text).First().Id;
+                    newDeveloperId = (int)DeveloperCombobox.SelectedValue;
                     newDev = false;
                 }
             }
             
             if ( newDev )
             {
-                developerTableAdapter.Insert(DeveloperCombobox.Text);
+                BindingContext[researchDatabaseDataSet, "Developer"].EndCurrentEdit();
+
+                developerTableAdapter.Insert(ls_developerName);
                 developerTableAdapter.Update(researchDatabaseDataSet.Developer);
-                researchDatabaseDataSet.AcceptChanges();
-                
-                EnumerableRowCollection<ResearchDatabaseDataSet.DeveloperRow> lk_rows = researchDatabaseDataSet.Developer.Where(x => x.Name == DeveloperCombobox.Text);
+                developerTableAdapter.Fill(researchDatabaseDataSet.Developer);
+
+                EnumerableRowCollection<ResearchDatabaseDataSet.DeveloperRow> lk_rows = researchDatabaseDataSet.Developer.Where(x => x.Name == ls_developerName);
 
                 if (lk_rows.Count() > 0)
                     newDeveloperId = lk_rows.First().Id;
             }
 
             ResearchDatabaseDataSetTableAdapters.ApplicationTableAdapter lk_appAdapter = new ResearchDatabaseDataSetTableAdapters.ApplicationTableAdapter();
-            lk_appAdapter.Insert(ls_newAppName, newDeveloperId, null, 1, "", "");
+            lk_appAdapter.Insert(ls_newAppName, newDeveloperId, releaseDate.Value, 1, "", "");
             lk_appAdapter.Update(researchDatabaseDataSet);
 
             Close();
-        } 
+        }
     }
 }
