@@ -44,9 +44,10 @@
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(180, 133);
+            this.OKButton.Location = new System.Drawing.Point(240, 164);
+            this.OKButton.Margin = new System.Windows.Forms.Padding(4);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(86, 23);
+            this.OKButton.Size = new System.Drawing.Size(115, 28);
             this.OKButton.TabIndex = 0;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(272, 133);
+            this.CancelButton.Location = new System.Drawing.Point(363, 164);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(86, 23);
+            this.CancelButton.Size = new System.Drawing.Size(115, 28);
             this.CancelButton.TabIndex = 1;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -64,17 +66,20 @@
             // 
             // NameTextbox
             // 
-            this.NameTextbox.Location = new System.Drawing.Point(56, 31);
+            this.NameTextbox.AcceptsTab = true;
+            this.NameTextbox.Location = new System.Drawing.Point(75, 38);
+            this.NameTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.NameTextbox.Name = "NameTextbox";
-            this.NameTextbox.Size = new System.Drawing.Size(294, 20);
+            this.NameTextbox.Size = new System.Drawing.Size(391, 22);
             this.NameTextbox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Location = new System.Drawing.Point(16, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name:";
             // 
@@ -89,9 +94,10 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(15, 65);
+            this.label2.Location = new System.Drawing.Point(20, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 14);
+            this.label2.Size = new System.Drawing.Size(281, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Developer";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -100,9 +106,10 @@
             // 
             this.ErrorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrorText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ErrorText.Location = new System.Drawing.Point(15, 117);
+            this.ErrorText.Location = new System.Drawing.Point(20, 144);
+            this.ErrorText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ErrorText.Name = "ErrorText";
-            this.ErrorText.Size = new System.Drawing.Size(343, 16);
+            this.ErrorText.Size = new System.Drawing.Size(457, 20);
             this.ErrorText.TabIndex = 6;
             this.ErrorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -113,34 +120,37 @@
             this.DeveloperCombobox.DataSource = this.researchDatabaseDataSet;
             this.DeveloperCombobox.DisplayMember = "Developer.Name";
             this.DeveloperCombobox.FormattingEnabled = true;
-            this.DeveloperCombobox.Location = new System.Drawing.Point(15, 82);
+            this.DeveloperCombobox.Location = new System.Drawing.Point(20, 101);
+            this.DeveloperCombobox.Margin = new System.Windows.Forms.Padding(4);
             this.DeveloperCombobox.Name = "DeveloperCombobox";
-            this.DeveloperCombobox.Size = new System.Drawing.Size(211, 21);
+            this.DeveloperCombobox.Size = new System.Drawing.Size(280, 24);
             this.DeveloperCombobox.TabIndex = 7;
             this.DeveloperCombobox.ValueMember = "Developer.Id";
             // 
             // releaseDate
             // 
             this.releaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.releaseDate.Location = new System.Drawing.Point(242, 82);
+            this.releaseDate.Location = new System.Drawing.Point(323, 101);
+            this.releaseDate.Margin = new System.Windows.Forms.Padding(4);
             this.releaseDate.Name = "releaseDate";
-            this.releaseDate.Size = new System.Drawing.Size(108, 20);
+            this.releaseDate.Size = new System.Drawing.Size(143, 22);
             this.releaseDate.TabIndex = 8;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(242, 65);
+            this.label3.Location = new System.Drawing.Point(323, 80);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 14);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Release Date";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NewApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 168);
+            this.ClientSize = new System.Drawing.Size(493, 207);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.releaseDate);
             this.Controls.Add(this.DeveloperCombobox);
@@ -150,9 +160,10 @@
             this.Controls.Add(this.NameTextbox);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
-            this.Name = "NewReview";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "NewApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "New Review";
+            this.Text = "New Application...";
             this.Load += new System.EventHandler(this.NewApplication_Load);
             ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);

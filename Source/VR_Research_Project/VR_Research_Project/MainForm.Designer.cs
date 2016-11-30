@@ -37,6 +37,7 @@
             this.MainToolStrip = new System.Windows.Forms.ToolStrip();
             this.ToolstripApplications_button = new System.Windows.Forms.ToolStripButton();
             this.ToolstripReporting_button = new System.Windows.Forms.ToolStripButton();
+            this.SearchToolstripButton = new System.Windows.Forms.ToolStripButton();
             this.listBox_Applications = new System.Windows.Forms.ListBox();
             this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
             this.label_Applications = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.nameTextBox1 = new System.Windows.Forms.TextBox();
             this.DeleteApplication = new System.Windows.Forms.Button();
             this.newApplicationButton = new System.Windows.Forms.Button();
-            this.SearchToolstripButton = new System.Windows.Forms.ToolStripButton();
             mechanicDescriptionLabel = new System.Windows.Forms.Label();
             generalDescriptionLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -84,45 +84,50 @@
             // mechanicDescriptionLabel
             // 
             mechanicDescriptionLabel.AutoSize = true;
-            mechanicDescriptionLabel.Location = new System.Drawing.Point(37, 350);
+            mechanicDescriptionLabel.Location = new System.Drawing.Point(49, 431);
+            mechanicDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mechanicDescriptionLabel.Name = "mechanicDescriptionLabel";
-            mechanicDescriptionLabel.Size = new System.Drawing.Size(113, 13);
+            mechanicDescriptionLabel.Size = new System.Drawing.Size(147, 17);
             mechanicDescriptionLabel.TabIndex = 0;
             mechanicDescriptionLabel.Text = "Mechanic Description:";
             // 
             // generalDescriptionLabel
             // 
             generalDescriptionLabel.AutoSize = true;
-            generalDescriptionLabel.Location = new System.Drawing.Point(47, 190);
+            generalDescriptionLabel.Location = new System.Drawing.Point(63, 234);
+            generalDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             generalDescriptionLabel.Name = "generalDescriptionLabel";
-            generalDescriptionLabel.Size = new System.Drawing.Size(103, 13);
+            generalDescriptionLabel.Size = new System.Drawing.Size(138, 17);
             generalDescriptionLabel.TabIndex = 0;
             generalDescriptionLabel.Text = "General Description:";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(91, 37);
+            nameLabel.Location = new System.Drawing.Point(121, 46);
+            nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(59, 13);
+            nameLabel.Size = new System.Drawing.Size(77, 17);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Developer:";
             // 
             // nameLabel1
             // 
             nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(91, 135);
+            nameLabel1.Location = new System.Drawing.Point(121, 166);
+            nameLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nameLabel1.Name = "nameLabel1";
-            nameLabel1.Size = new System.Drawing.Size(48, 13);
+            nameLabel1.Size = new System.Drawing.Size(64, 17);
             nameLabel1.TabIndex = 0;
             nameLabel1.Text = "Platform:";
             // 
             // releaseDateLabel1
             // 
             releaseDateLabel1.AutoSize = true;
-            releaseDateLabel1.Location = new System.Drawing.Point(75, 88);
+            releaseDateLabel1.Location = new System.Drawing.Point(100, 108);
+            releaseDateLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             releaseDateLabel1.Name = "releaseDateLabel1";
-            releaseDateLabel1.Size = new System.Drawing.Size(75, 13);
+            releaseDateLabel1.Size = new System.Drawing.Size(98, 17);
             releaseDateLabel1.TabIndex = 0;
             releaseDateLabel1.Text = "Release Date:";
             // 
@@ -136,7 +141,7 @@
             this.SearchToolstripButton});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MainToolStrip.Name = "MainToolStrip";
-            this.MainToolStrip.Size = new System.Drawing.Size(919, 25);
+            this.MainToolStrip.Size = new System.Drawing.Size(1225, 27);
             this.MainToolStrip.TabIndex = 0;
             // 
             // ToolstripApplications_button
@@ -148,7 +153,7 @@
             this.ToolstripApplications_button.Image = ((System.Drawing.Image)(resources.GetObject("ToolstripApplications_button.Image")));
             this.ToolstripApplications_button.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolstripApplications_button.Name = "ToolstripApplications_button";
-            this.ToolstripApplications_button.Size = new System.Drawing.Size(77, 22);
+            this.ToolstripApplications_button.Size = new System.Drawing.Size(96, 24);
             this.ToolstripApplications_button.Text = "Applications";
             this.ToolstripApplications_button.Click += new System.EventHandler(this.ToolbarButton_clicked);
             // 
@@ -160,9 +165,20 @@
             this.ToolstripReporting_button.Image = ((System.Drawing.Image)(resources.GetObject("ToolstripReporting_button.Image")));
             this.ToolstripReporting_button.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolstripReporting_button.Name = "ToolstripReporting_button";
-            this.ToolstripReporting_button.Size = new System.Drawing.Size(63, 22);
+            this.ToolstripReporting_button.Size = new System.Drawing.Size(79, 24);
             this.ToolstripReporting_button.Text = "Reporting";
             this.ToolstripReporting_button.Click += new System.EventHandler(this.ToolbarButton_clicked);
+            // 
+            // SearchToolstripButton
+            // 
+            this.SearchToolstripButton.CheckOnClick = true;
+            this.SearchToolstripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SearchToolstripButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchToolstripButton.Image")));
+            this.SearchToolstripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SearchToolstripButton.Name = "SearchToolstripButton";
+            this.SearchToolstripButton.Size = new System.Drawing.Size(57, 24);
+            this.SearchToolstripButton.Text = "Search";
+            this.SearchToolstripButton.Click += new System.EventHandler(this.ToolbarButton_clicked);
             // 
             // listBox_Applications
             // 
@@ -171,9 +187,11 @@
             this.listBox_Applications.DataSource = this.researchDatabaseDataSet;
             this.listBox_Applications.DisplayMember = "Application.Name";
             this.listBox_Applications.FormattingEnabled = true;
-            this.listBox_Applications.Location = new System.Drawing.Point(13, 70);
+            this.listBox_Applications.ItemHeight = 16;
+            this.listBox_Applications.Location = new System.Drawing.Point(17, 86);
+            this.listBox_Applications.Margin = new System.Windows.Forms.Padding(4);
             this.listBox_Applications.Name = "listBox_Applications";
-            this.listBox_Applications.Size = new System.Drawing.Size(275, 537);
+            this.listBox_Applications.Size = new System.Drawing.Size(365, 660);
             this.listBox_Applications.TabIndex = 0;
             this.listBox_Applications.ValueMember = "Application.Id";
             this.listBox_Applications.SelectedIndexChanged += new System.EventHandler(this.ApplicationSelected);
@@ -187,9 +205,10 @@
             // 
             this.label_Applications.AutoSize = true;
             this.label_Applications.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Applications.Location = new System.Drawing.Point(12, 40);
+            this.label_Applications.Location = new System.Drawing.Point(16, 49);
+            this.label_Applications.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Applications.Name = "label_Applications";
-            this.label_Applications.Size = new System.Drawing.Size(99, 18);
+            this.label_Applications.Size = new System.Drawing.Size(124, 24);
             this.label_Applications.TabIndex = 3;
             this.label_Applications.Text = "Applications";
             // 
@@ -201,10 +220,11 @@
             this.MainTabcontrol.Controls.Add(this.tabPage_General);
             this.MainTabcontrol.Controls.Add(this.GenresAndMechanicsTab);
             this.MainTabcontrol.Controls.Add(this.tabPage1);
-            this.MainTabcontrol.Location = new System.Drawing.Point(306, 70);
+            this.MainTabcontrol.Location = new System.Drawing.Point(408, 86);
+            this.MainTabcontrol.Margin = new System.Windows.Forms.Padding(4);
             this.MainTabcontrol.Name = "MainTabcontrol";
             this.MainTabcontrol.SelectedIndex = 0;
-            this.MainTabcontrol.Size = new System.Drawing.Size(601, 568);
+            this.MainTabcontrol.Size = new System.Drawing.Size(801, 699);
             this.MainTabcontrol.TabIndex = 0;
             // 
             // tabPage_General
@@ -221,10 +241,11 @@
             this.tabPage_General.Controls.Add(this.generalDescriptionTextBox);
             this.tabPage_General.Controls.Add(mechanicDescriptionLabel);
             this.tabPage_General.Controls.Add(this.mechanicDescriptionTextBox);
-            this.tabPage_General.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_General.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_General.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage_General.Name = "tabPage_General";
-            this.tabPage_General.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_General.Size = new System.Drawing.Size(593, 542);
+            this.tabPage_General.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage_General.Size = new System.Drawing.Size(793, 670);
             this.tabPage_General.TabIndex = 0;
             this.tabPage_General.Text = "General";
             // 
@@ -232,9 +253,10 @@
             // 
             this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.researchDatabaseDataSet, "Application.ReleaseDate", true));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 88);
+            this.dateTimePicker1.Location = new System.Drawing.Point(209, 108);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(159, 22);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // nameComboBox1
@@ -244,9 +266,10 @@
             this.nameComboBox1.DisplayMember = "Platform.Name";
             this.nameComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox1.FormattingEnabled = true;
-            this.nameComboBox1.Location = new System.Drawing.Point(156, 132);
+            this.nameComboBox1.Location = new System.Drawing.Point(208, 162);
+            this.nameComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.nameComboBox1.Name = "nameComboBox1";
-            this.nameComboBox1.Size = new System.Drawing.Size(121, 21);
+            this.nameComboBox1.Size = new System.Drawing.Size(160, 24);
             this.nameComboBox1.TabIndex = 3;
             this.nameComboBox1.ValueMember = "Platform.Id";
             // 
@@ -256,9 +279,10 @@
             this.nameComboBox.DataSource = this.researchDatabaseDataSet;
             this.nameComboBox.DisplayMember = "Developer.Name";
             this.nameComboBox.FormattingEnabled = true;
-            this.nameComboBox.Location = new System.Drawing.Point(156, 34);
+            this.nameComboBox.Location = new System.Drawing.Point(208, 42);
+            this.nameComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameComboBox.Name = "nameComboBox";
-            this.nameComboBox.Size = new System.Drawing.Size(194, 21);
+            this.nameComboBox.Size = new System.Drawing.Size(257, 24);
             this.nameComboBox.TabIndex = 1;
             this.nameComboBox.ValueMember = "Developer.Id";
             // 
@@ -268,12 +292,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.generalDescriptionTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.generalDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.researchDatabaseDataSet, "Application.GeneralDescription", true));
-            this.generalDescriptionTextBox.Location = new System.Drawing.Point(156, 187);
+            this.generalDescriptionTextBox.Location = new System.Drawing.Point(208, 230);
+            this.generalDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.generalDescriptionTextBox.MaxLength = 1200;
             this.generalDescriptionTextBox.Multiline = true;
             this.generalDescriptionTextBox.Name = "generalDescriptionTextBox";
-            this.generalDescriptionTextBox.Size = new System.Drawing.Size(387, 123);
+            this.generalDescriptionTextBox.Size = new System.Drawing.Size(515, 150);
             this.generalDescriptionTextBox.TabIndex = 4;
-            this.generalDescriptionTextBox.TextChanged += new System.EventHandler(this.ValidateGeneralTab);
             // 
             // mechanicDescriptionTextBox
             // 
@@ -282,20 +307,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mechanicDescriptionTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.mechanicDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.researchDatabaseDataSet, "Application.MechanicDescription", true));
-            this.mechanicDescriptionTextBox.Location = new System.Drawing.Point(156, 347);
+            this.mechanicDescriptionTextBox.Location = new System.Drawing.Point(208, 427);
+            this.mechanicDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mechanicDescriptionTextBox.MaxLength = 1200;
             this.mechanicDescriptionTextBox.Multiline = true;
             this.mechanicDescriptionTextBox.Name = "mechanicDescriptionTextBox";
-            this.mechanicDescriptionTextBox.Size = new System.Drawing.Size(387, 125);
+            this.mechanicDescriptionTextBox.Size = new System.Drawing.Size(515, 153);
             this.mechanicDescriptionTextBox.TabIndex = 5;
             // 
             // GenresAndMechanicsTab
             // 
             this.GenresAndMechanicsTab.BackColor = System.Drawing.SystemColors.ControlLight;
             this.GenresAndMechanicsTab.Controls.Add(this.splitContainer1);
-            this.GenresAndMechanicsTab.Location = new System.Drawing.Point(4, 22);
+            this.GenresAndMechanicsTab.Location = new System.Drawing.Point(4, 25);
+            this.GenresAndMechanicsTab.Margin = new System.Windows.Forms.Padding(4);
             this.GenresAndMechanicsTab.Name = "GenresAndMechanicsTab";
-            this.GenresAndMechanicsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GenresAndMechanicsTab.Size = new System.Drawing.Size(593, 542);
+            this.GenresAndMechanicsTab.Padding = new System.Windows.Forms.Padding(4);
+            this.GenresAndMechanicsTab.Size = new System.Drawing.Size(793, 670);
             this.GenresAndMechanicsTab.TabIndex = 1;
             this.GenresAndMechanicsTab.Text = "Genres/Mechanics";
             // 
@@ -304,7 +332,8 @@
             this.splitContainer1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -316,17 +345,19 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.MechanicsControl);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Size = new System.Drawing.Size(587, 536);
-            this.splitContainer1.SplitterDistance = 293;
+            this.splitContainer1.Size = new System.Drawing.Size(785, 662);
+            this.splitContainer1.SplitterDistance = 391;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
             // 
             // GenresControl
             // 
             this.GenresControl.AutoSize = true;
             this.GenresControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GenresControl.Location = new System.Drawing.Point(0, 13);
+            this.GenresControl.Location = new System.Drawing.Point(0, 16);
+            this.GenresControl.Margin = new System.Windows.Forms.Padding(5);
             this.GenresControl.Name = "GenresControl";
-            this.GenresControl.Size = new System.Drawing.Size(293, 523);
+            this.GenresControl.Size = new System.Drawing.Size(391, 646);
             this.GenresControl.TabIndex = 0;
             // 
             // label1
@@ -334,8 +365,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 13);
+            this.label1.Size = new System.Drawing.Size(391, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Genres";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -343,9 +375,10 @@
             // MechanicsControl
             // 
             this.MechanicsControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MechanicsControl.Location = new System.Drawing.Point(0, 13);
+            this.MechanicsControl.Location = new System.Drawing.Point(0, 16);
+            this.MechanicsControl.Margin = new System.Windows.Forms.Padding(5);
             this.MechanicsControl.Name = "MechanicsControl";
-            this.MechanicsControl.Size = new System.Drawing.Size(290, 523);
+            this.MechanicsControl.Size = new System.Drawing.Size(389, 646);
             this.MechanicsControl.TabIndex = 1;
             // 
             // label2
@@ -353,8 +386,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 13);
+            this.label2.Size = new System.Drawing.Size(389, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mechanics";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,19 +397,21 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.Controls.Add(this.AppReviews);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(593, 542);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(793, 670);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Reviews";
             // 
             // AppReviews
             // 
             this.AppReviews.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AppReviews.Location = new System.Drawing.Point(3, 3);
+            this.AppReviews.Location = new System.Drawing.Point(4, 4);
+            this.AppReviews.Margin = new System.Windows.Forms.Padding(5);
             this.AppReviews.Name = "AppReviews";
-            this.AppReviews.Size = new System.Drawing.Size(587, 536);
+            this.AppReviews.Size = new System.Drawing.Size(785, 662);
             this.AppReviews.TabIndex = 0;
             // 
             // applicationTableAdapter
@@ -418,10 +454,11 @@
             this.nameTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.nameTextBox1.Location = new System.Drawing.Point(310, 25);
+            this.nameTextBox1.Location = new System.Drawing.Point(413, 31);
+            this.nameTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.nameTextBox1.Name = "nameTextBox1";
             this.nameTextBox1.ReadOnly = true;
-            this.nameTextBox1.Size = new System.Drawing.Size(529, 22);
+            this.nameTextBox1.Size = new System.Drawing.Size(705, 27);
             this.nameTextBox1.TabIndex = 5;
             this.nameTextBox1.TabStop = false;
             this.nameTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -430,9 +467,10 @@
             // 
             this.DeleteApplication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.DeleteApplication.Enabled = false;
-            this.DeleteApplication.Location = new System.Drawing.Point(213, 613);
+            this.DeleteApplication.Location = new System.Drawing.Point(284, 754);
+            this.DeleteApplication.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteApplication.Name = "DeleteApplication";
-            this.DeleteApplication.Size = new System.Drawing.Size(75, 21);
+            this.DeleteApplication.Size = new System.Drawing.Size(100, 26);
             this.DeleteApplication.TabIndex = 6;
             this.DeleteApplication.Text = "Delete";
             this.DeleteApplication.UseVisualStyleBackColor = true;
@@ -441,31 +479,21 @@
             // newApplicationButton
             // 
             this.newApplicationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.newApplicationButton.Location = new System.Drawing.Point(13, 613);
+            this.newApplicationButton.Location = new System.Drawing.Point(17, 754);
+            this.newApplicationButton.Margin = new System.Windows.Forms.Padding(4);
             this.newApplicationButton.Name = "newApplicationButton";
-            this.newApplicationButton.Size = new System.Drawing.Size(75, 21);
+            this.newApplicationButton.Size = new System.Drawing.Size(100, 26);
             this.newApplicationButton.TabIndex = 7;
             this.newApplicationButton.Text = "New...";
             this.newApplicationButton.UseVisualStyleBackColor = true;
             this.newApplicationButton.Click += new System.EventHandler(this.NewApplicationClicked);
             // 
-            // SearchToolstripButton
-            // 
-            this.SearchToolstripButton.CheckOnClick = true;
-            this.SearchToolstripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.SearchToolstripButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchToolstripButton.Image")));
-            this.SearchToolstripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.SearchToolstripButton.Name = "SearchToolstripButton";
-            this.SearchToolstripButton.Size = new System.Drawing.Size(46, 22);
-            this.SearchToolstripButton.Text = "Search";
-            this.SearchToolstripButton.Click += new System.EventHandler(this.ToolbarButton_clicked);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(919, 660);
+            this.ClientSize = new System.Drawing.Size(1225, 812);
             this.Controls.Add(this.newApplicationButton);
             this.Controls.Add(this.DeleteApplication);
             this.Controls.Add(this.nameTextBox1);
@@ -473,6 +501,7 @@
             this.Controls.Add(this.label_Applications);
             this.Controls.Add(this.listBox_Applications);
             this.Controls.Add(this.MainToolStrip);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VR Research Database";

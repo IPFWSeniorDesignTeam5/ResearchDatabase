@@ -54,6 +54,8 @@ namespace VR_Research_Project
 
         private void NewApplicationClicked(object sender, EventArgs e)
         {
+            SaveCurrentData();
+
             NewApplication lk_new = new NewApplication();
 
             lk_new.ShowDialog(this);
@@ -61,24 +63,29 @@ namespace VR_Research_Project
             RefreshData();
         }
 
-        private void MainFormClosing(object sender, FormClosingEventArgs e)
+        private bool SaveCurrentData()
         {
             try
             {
                 BindingContext[researchDatabaseDataSet, "Application"].EndCurrentEdit();
                 tableAdapterManager.UpdateAll(researchDatabaseDataSet);
                 researchDatabaseDataSet.AcceptChanges();
+
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Update Error", "Failed to update data. " + ex.Message);
-                e.Cancel = true;
+                MessageBox.Show( "Failed to update data. " + ex.Message, "Update Error");
             }
+
+            return false;
         }
 
-        private void ValidateGeneralTab(object sender, EventArgs e)
+        private void MainFormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (!SaveCurrentData())
+               if( MessageBox.Show( "Quit without saving?", "Closing", MessageBoxButtons.YesNo) == DialogResult.No )
+                    e.Cancel = true;
         }
 
         private void DeleteApplication_clicked(object sender, EventArgs e)

@@ -12,6 +12,13 @@ namespace VR_Research_Project
 {
     public partial class NewApplication : Form
     {
+        private int m_iNewAppId = 0;
+
+        public int NewAppId
+        {
+            get { return m_iNewAppId; }
+        }
+
         public NewApplication()
         {
             InitializeComponent();
@@ -25,6 +32,7 @@ namespace VR_Research_Project
         private void NewApplication_Load(object sender, EventArgs e)
         {
             developerTableAdapter.Fill(researchDatabaseDataSet.Developer);
+            NameTextbox.Focus();
         }
 
         private void OKClicked(object sender, EventArgs e)
@@ -81,6 +89,12 @@ namespace VR_Research_Project
             ResearchDatabaseDataSetTableAdapters.ApplicationTableAdapter lk_appAdapter = new ResearchDatabaseDataSetTableAdapters.ApplicationTableAdapter();
             lk_appAdapter.Insert(ls_newAppName, newDeveloperId, releaseDate.Value, 1, "", "");
             lk_appAdapter.Update(researchDatabaseDataSet);
+
+            if (researchDatabaseDataSet.Application.Where(x => x.Name.ToUpper() == ls_newAppName.ToUpper()).Count() > 0)
+            {
+                ErrorText.Text = "Application with that name already exists.";
+                return;
+            }
 
             Close();
         }

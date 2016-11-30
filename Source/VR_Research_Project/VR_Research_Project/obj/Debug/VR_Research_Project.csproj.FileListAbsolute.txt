@@ -34,3 +34,18 @@ C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\VR_Rese
 C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.exe
 C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.pdb
 C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.csprojResolveAssemblyReference.cache
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\bin\Debug\VR_Research_Project.exe.config
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.exe
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.pdb
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\bin\Debug\VR_Research_Project.exe
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\bin\Debug\VR_Research_Project.pdb
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.AppReviews.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.GenresAndMechanics.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.Form1.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.NewApplication.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.NewGenreMechanic.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.NewReview.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.Properties.Resources.resources
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.csproj.GenerateResource.Cache
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\bin\Debug\ResearchDatabase.mdf
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\bin\Debug\ResearchDatabase_log.ldf

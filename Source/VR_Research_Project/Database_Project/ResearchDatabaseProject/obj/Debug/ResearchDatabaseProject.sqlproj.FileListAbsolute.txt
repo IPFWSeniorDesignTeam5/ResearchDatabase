@@ -17,3 +17,8 @@ C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\Databas
 C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.pdb
 C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.dll
 C:\Users\Johns\Documents\Visual Studio 2015\Projects\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.pdb
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.dacpac
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.dll
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.pdb
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.dll
+C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.pdb

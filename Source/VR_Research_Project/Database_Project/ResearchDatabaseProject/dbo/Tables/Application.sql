@@ -4,8 +4,8 @@
     [DeveloperId] INT           NOT NULL,
     [ReleaseDate] DATE          NOT NULL,
     [Platform]    INT           NOT NULL,
-    [GeneralDescription] VARCHAR(550) NULL, 
-    [MechanicDescription] VARCHAR(550) NULL, 
+    [GeneralDescription] VARCHAR(1200) NULL, 
+    [MechanicDescription] VARCHAR(1200) NULL, 
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Application_ToDeveloper] FOREIGN KEY ([DeveloperId]) REFERENCES [dbo].[Developer] ([Id]),
     CONSTRAINT [FK_Application_ToPlatform] FOREIGN KEY ([Platform]) REFERENCES [dbo].[Platform] ([Id])
