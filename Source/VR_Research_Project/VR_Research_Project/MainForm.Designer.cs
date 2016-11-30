@@ -63,6 +63,7 @@
             this.nameTextBox1 = new System.Windows.Forms.TextBox();
             this.DeleteApplication = new System.Windows.Forms.Button();
             this.newApplicationButton = new System.Windows.Forms.Button();
+            this.SearchToolstripButton = new System.Windows.Forms.ToolStripButton();
             mechanicDescriptionLabel = new System.Windows.Forms.Label();
             generalDescriptionLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -131,7 +132,8 @@
             this.MainToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolstripApplications_button,
-            this.ToolstripReporting_button});
+            this.ToolstripReporting_button,
+            this.SearchToolstripButton});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.MainToolStrip.Name = "MainToolStrip";
             this.MainToolStrip.Size = new System.Drawing.Size(919, 25);
@@ -447,6 +449,17 @@
             this.newApplicationButton.UseVisualStyleBackColor = true;
             this.newApplicationButton.Click += new System.EventHandler(this.NewApplicationClicked);
             // 
+            // SearchToolstripButton
+            // 
+            this.SearchToolstripButton.CheckOnClick = true;
+            this.SearchToolstripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SearchToolstripButton.Image = ((System.Drawing.Image)(resources.GetObject("SearchToolstripButton.Image")));
+            this.SearchToolstripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SearchToolstripButton.Name = "SearchToolstripButton";
+            this.SearchToolstripButton.Size = new System.Drawing.Size(46, 22);
+            this.SearchToolstripButton.Text = "Search";
+            this.SearchToolstripButton.Click += new System.EventHandler(this.ToolbarButton_clicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +474,7 @@
             this.Controls.Add(this.listBox_Applications);
             this.Controls.Add(this.MainToolStrip);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VR Research Database";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -513,6 +527,7 @@
         private System.Windows.Forms.ToolStripButton ToolstripReporting_button;
         private System.Windows.Forms.Button newApplicationButton;
         private AppReviews AppReviews;
+        private System.Windows.Forms.ToolStripButton SearchToolstripButton;
     }
 }
 

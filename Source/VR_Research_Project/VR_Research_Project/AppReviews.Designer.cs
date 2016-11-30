@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridView reviewGridView;
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reviewerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeSpentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bottomLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
             this.reviewTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ReviewTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddReview_button = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reviewerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeSpentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             reviewGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(reviewGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reviewBindingSource)).BeginInit();
@@ -52,6 +52,7 @@
             reviewGridView.AllowUserToAddRows = false;
             reviewGridView.AllowUserToDeleteRows = false;
             reviewGridView.AutoGenerateColumns = false;
+            reviewGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             reviewGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             reviewGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             reviewGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -59,7 +60,7 @@
             this.reviewerDataGridViewTextBoxColumn,
             this.timeSpentDataGridViewTextBoxColumn,
             this.ratingDataGridViewTextBoxColumn,
-            this.bottomLineDataGridViewTextBoxColumn});
+            this.viewColumn});
             reviewGridView.DataSource = this.reviewBindingSource;
             reviewGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             reviewGridView.Location = new System.Drawing.Point(0, 0);
@@ -67,42 +68,7 @@
             reviewGridView.ReadOnly = true;
             reviewGridView.Size = new System.Drawing.Size(437, 468);
             reviewGridView.TabIndex = 2;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // reviewerDataGridViewTextBoxColumn
-            // 
-            this.reviewerDataGridViewTextBoxColumn.DataPropertyName = "Reviewer";
-            this.reviewerDataGridViewTextBoxColumn.HeaderText = "Reviewer";
-            this.reviewerDataGridViewTextBoxColumn.Name = "reviewerDataGridViewTextBoxColumn";
-            this.reviewerDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // timeSpentDataGridViewTextBoxColumn
-            // 
-            this.timeSpentDataGridViewTextBoxColumn.DataPropertyName = "TimeSpent";
-            this.timeSpentDataGridViewTextBoxColumn.HeaderText = "TimeSpent";
-            this.timeSpentDataGridViewTextBoxColumn.Name = "timeSpentDataGridViewTextBoxColumn";
-            this.timeSpentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ratingDataGridViewTextBoxColumn
-            // 
-            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
-            this.ratingDataGridViewTextBoxColumn.HeaderText = "Rating";
-            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
-            this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bottomLineDataGridViewTextBoxColumn
-            // 
-            this.bottomLineDataGridViewTextBoxColumn.DataPropertyName = "BottomLine";
-            this.bottomLineDataGridViewTextBoxColumn.HeaderText = "BottomLine";
-            this.bottomLineDataGridViewTextBoxColumn.Name = "bottomLineDataGridViewTextBoxColumn";
-            this.bottomLineDataGridViewTextBoxColumn.ReadOnly = true;
+            reviewGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewCell_clicked);
             // 
             // reviewBindingSource
             // 
@@ -139,6 +105,44 @@
             this.AddReview_button.UseVisualStyleBackColor = true;
             this.AddReview_button.Click += new System.EventHandler(this.NewReview_clicked);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // reviewerDataGridViewTextBoxColumn
+            // 
+            this.reviewerDataGridViewTextBoxColumn.DataPropertyName = "Reviewer";
+            this.reviewerDataGridViewTextBoxColumn.HeaderText = "Reviewer";
+            this.reviewerDataGridViewTextBoxColumn.Name = "reviewerDataGridViewTextBoxColumn";
+            this.reviewerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // timeSpentDataGridViewTextBoxColumn
+            // 
+            this.timeSpentDataGridViewTextBoxColumn.DataPropertyName = "TimeSpent";
+            this.timeSpentDataGridViewTextBoxColumn.HeaderText = "TimeSpent";
+            this.timeSpentDataGridViewTextBoxColumn.Name = "timeSpentDataGridViewTextBoxColumn";
+            this.timeSpentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ratingDataGridViewTextBoxColumn
+            // 
+            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
+            this.ratingDataGridViewTextBoxColumn.HeaderText = "Rating";
+            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            this.ratingDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // viewColumn
+            // 
+            this.viewColumn.HeaderText = "View";
+            this.viewColumn.Name = "viewColumn";
+            this.viewColumn.ReadOnly = true;
+            this.viewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.viewColumn.Text = "View...";
+            this.viewColumn.UseColumnTextForButtonValue = true;
+            // 
             // AppReviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +169,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reviewerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeSpentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bottomLineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn viewColumn;
     }
 }

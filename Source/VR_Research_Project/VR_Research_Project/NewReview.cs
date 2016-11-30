@@ -27,12 +27,16 @@ namespace VR_Research_Project
 
             if (m_iReviewId == 0)
             {
+                Text = "New Review";
                 reviewBindingSource.AddNew();
                 return;
             }
+            else
+                Text = "Review Details";
 
             reviewTableAdapter.FillByReviewId(researchDatabaseDataSet.Review, reviewId);
             appProTableAdapter.FillByReviewId(researchDatabaseDataSet.AppPro, reviewId);
+            appConTableAdapter.FillByReviewId(researchDatabaseDataSet.AppCon, reviewId);
         }
 
         private void CancelClicked(object sender, EventArgs e)
@@ -48,6 +52,7 @@ namespace VR_Research_Project
             {
                 reviewBindingSource.EndEdit();
                 appProBindingSource.EndEdit();
+                appConBindingSource.EndEdit();
 
                 reviewTableAdapter.Update(researchDatabaseDataSet);
                 
@@ -59,9 +64,13 @@ namespace VR_Research_Project
                 }
 
                 appProTableAdapter.Update(researchDatabaseDataSet);
+                appConTableAdapter.Update(researchDatabaseDataSet);
 
                 reviewProTableAdapter.DeleteByReview(m_iReviewId);
                 reviewProTableAdapter.Update(researchDatabaseDataSet);
+
+                reviewConTableAdapter.DeleteByReview(m_iReviewId);
+                reviewConTableAdapter.Update(researchDatabaseDataSet);
 
                 foreach (DataRowView item in appProBindingSource.List)
                 {
@@ -70,12 +79,24 @@ namespace VR_Research_Project
                 }
 
                 reviewProTableAdapter.Update(researchDatabaseDataSet);
-                tableAdapterManager.UpdateAll( researchDatabaseDataSet );
+
+                foreach (DataRowView item in appConBindingSource.List)
+                {
+                    ResearchDatabaseDataSet.AppConRow lk_row = (ResearchDatabaseDataSet.AppConRow)item.Row;
+                    reviewConTableAdapter.Insert(m_iReviewId, lk_row.Id);
+                }
+
+                reviewConTableAdapter.Update(researchDatabaseDataSet);
+
+                tableAdapterManager.UpdateAll(researchDatabaseDataSet);
 
                 appProBindingSource.DataMember = null;
                 appProBindingSource.DataSource = null;
                 appProBindingSource.ResetBindings(true);
-               // appProBindingSource.CurrencyManager.Refresh();
+
+                appConBindingSource.DataMember = null;
+                appConBindingSource.DataSource = null;
+                appConBindingSource.ResetBindings(true);
 
                 Close();
 

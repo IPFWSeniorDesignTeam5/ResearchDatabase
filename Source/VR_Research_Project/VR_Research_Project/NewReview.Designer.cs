@@ -33,24 +33,12 @@
             System.Windows.Forms.Label timeSpentLabel;
             System.Windows.Forms.Label ratingLabel;
             System.Windows.Forms.Label bottomLineLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewReview));
             System.Windows.Forms.Label reviewDateLabel;
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.ErrorText = new System.Windows.Forms.Label();
-            this.reviewBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.reviewBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.reviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
             this.reviewerTextBox = new System.Windows.Forms.TextBox();
             this.timeSpentNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ratingNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -61,8 +49,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appProBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
-            this.reviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reviewTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ReviewTableAdapter();
             this.tableAdapterManager = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.TableAdapterManager();
             this.applicationReviewTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ApplicationReviewTableAdapter();
@@ -70,26 +56,31 @@
             this.reviewConTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ReviewConTableAdapter();
             this.reviewProTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.ReviewProTableAdapter();
             this.reviewDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.appConBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appConTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.AppConTableAdapter();
+            this.appConDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             reviewerLabel = new System.Windows.Forms.Label();
             timeSpentLabel = new System.Windows.Forms.Label();
             ratingLabel = new System.Windows.Forms.Label();
             bottomLineLabel = new System.Windows.Forms.Label();
             reviewDateLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.reviewBindingNavigator)).BeginInit();
-            this.reviewBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeSpentNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ratingNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appProDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appProBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reviewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appConBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appConDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // reviewerLabel
             // 
             reviewerLabel.AutoSize = true;
             reviewerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            reviewerLabel.Location = new System.Drawing.Point(74, 41);
+            reviewerLabel.Location = new System.Drawing.Point(74, 33);
             reviewerLabel.Name = "reviewerLabel";
             reviewerLabel.Size = new System.Drawing.Size(64, 13);
             reviewerLabel.TabIndex = 7;
@@ -99,7 +90,7 @@
             // 
             timeSpentLabel.AutoSize = true;
             timeSpentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            timeSpentLabel.Location = new System.Drawing.Point(217, 86);
+            timeSpentLabel.Location = new System.Drawing.Point(217, 77);
             timeSpentLabel.Name = "timeSpentLabel";
             timeSpentLabel.Size = new System.Drawing.Size(130, 13);
             timeSpentLabel.TabIndex = 8;
@@ -109,21 +100,31 @@
             // 
             ratingLabel.AutoSize = true;
             ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ratingLabel.Location = new System.Drawing.Point(53, 129);
+            ratingLabel.Location = new System.Drawing.Point(53, 123);
             ratingLabel.Name = "ratingLabel";
-            ratingLabel.Size = new System.Drawing.Size(85, 13);
+            ratingLabel.Size = new System.Drawing.Size(86, 13);
             ratingLabel.TabIndex = 9;
-            ratingLabel.Text = "Rating (1-10):";
+            ratingLabel.Text = "Rating ( 1-5 ):";
             // 
             // bottomLineLabel
             // 
             bottomLineLabel.AutoSize = true;
             bottomLineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bottomLineLabel.Location = new System.Drawing.Point(48, 171);
+            bottomLineLabel.Location = new System.Drawing.Point(48, 162);
             bottomLineLabel.Name = "bottomLineLabel";
             bottomLineLabel.Size = new System.Drawing.Size(90, 13);
             bottomLineLabel.TabIndex = 10;
             bottomLineLabel.Text = "\"Bottom Line\":";
+            // 
+            // reviewDateLabel
+            // 
+            reviewDateLabel.AutoSize = true;
+            reviewDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            reviewDateLabel.Location = new System.Drawing.Point(18, 77);
+            reviewDateLabel.Name = "reviewDateLabel";
+            reviewDateLabel.Size = new System.Drawing.Size(84, 13);
+            reviewDateLabel.TabIndex = 15;
+            reviewDateLabel.Text = "Review Date:";
             // 
             // OKButton
             // 
@@ -155,134 +156,20 @@
             this.ErrorText.TabIndex = 6;
             this.ErrorText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // reviewBindingNavigator
+            // reviewBindingSource
             // 
-            this.reviewBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.reviewBindingNavigator.BindingSource = this.reviewBindingSource;
-            this.reviewBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.reviewBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.reviewBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.reviewBindingNavigatorSaveItem});
-            this.reviewBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.reviewBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.reviewBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.reviewBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.reviewBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.reviewBindingNavigator.Name = "reviewBindingNavigator";
-            this.reviewBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.reviewBindingNavigator.Size = new System.Drawing.Size(472, 25);
-            this.reviewBindingNavigator.TabIndex = 7;
-            this.reviewBindingNavigator.Text = "bindingNavigator1";
+            this.reviewBindingSource.DataMember = "Review";
+            this.reviewBindingSource.DataSource = this.researchDatabaseDataSet;
             // 
-            // bindingNavigatorAddNewItem
+            // researchDatabaseDataSet
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // reviewBindingNavigatorSaveItem
-            // 
-            this.reviewBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.reviewBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("reviewBindingNavigatorSaveItem.Image")));
-            this.reviewBindingNavigatorSaveItem.Name = "reviewBindingNavigatorSaveItem";
-            this.reviewBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.reviewBindingNavigatorSaveItem.Text = "Save Data";
-            this.reviewBindingNavigatorSaveItem.Click += new System.EventHandler(this.reviewBindingNavigatorSaveItem_Click);
+            this.researchDatabaseDataSet.DataSetName = "ResearchDatabaseDataSet";
+            this.researchDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reviewerTextBox
             // 
             this.reviewerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reviewBindingSource, "Reviewer", true));
-            this.reviewerTextBox.Location = new System.Drawing.Point(144, 38);
+            this.reviewerTextBox.Location = new System.Drawing.Point(144, 30);
             this.reviewerTextBox.Name = "reviewerTextBox";
             this.reviewerTextBox.Size = new System.Drawing.Size(203, 20);
             this.reviewerTextBox.TabIndex = 8;
@@ -290,7 +177,7 @@
             // timeSpentNumericUpDown
             // 
             this.timeSpentNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reviewBindingSource, "TimeSpent", true));
-            this.timeSpentNumericUpDown.Location = new System.Drawing.Point(353, 83);
+            this.timeSpentNumericUpDown.Location = new System.Drawing.Point(353, 74);
             this.timeSpentNumericUpDown.Name = "timeSpentNumericUpDown";
             this.timeSpentNumericUpDown.Size = new System.Drawing.Size(73, 20);
             this.timeSpentNumericUpDown.TabIndex = 9;
@@ -298,18 +185,33 @@
             // ratingNumericUpDown
             // 
             this.ratingNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reviewBindingSource, "Rating", true));
-            this.ratingNumericUpDown.Location = new System.Drawing.Point(144, 125);
+            this.ratingNumericUpDown.Location = new System.Drawing.Point(144, 119);
+            this.ratingNumericUpDown.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.ratingNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ratingNumericUpDown.Name = "ratingNumericUpDown";
             this.ratingNumericUpDown.Size = new System.Drawing.Size(42, 20);
             this.ratingNumericUpDown.TabIndex = 10;
+            this.ratingNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // bottomLineTextBox
             // 
             this.bottomLineTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reviewBindingSource, "BottomLine", true));
-            this.bottomLineTextBox.Location = new System.Drawing.Point(144, 168);
+            this.bottomLineTextBox.Location = new System.Drawing.Point(144, 158);
             this.bottomLineTextBox.Multiline = true;
             this.bottomLineTextBox.Name = "bottomLineTextBox";
-            this.bottomLineTextBox.Size = new System.Drawing.Size(289, 85);
+            this.bottomLineTextBox.Size = new System.Drawing.Size(289, 95);
             this.bottomLineTextBox.TabIndex = 11;
             // 
             // label1
@@ -364,16 +266,6 @@
             this.appProBindingSource.DataMember = "AppPro";
             this.appProBindingSource.DataSource = this.researchDatabaseDataSet;
             // 
-            // researchDatabaseDataSet
-            // 
-            this.researchDatabaseDataSet.DataSetName = "ResearchDatabaseDataSet";
-            this.researchDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reviewBindingSource
-            // 
-            this.reviewBindingSource.DataMember = "Review";
-            this.reviewBindingSource.DataSource = this.researchDatabaseDataSet;
-            // 
             // reviewTableAdapter
             // 
             this.reviewTableAdapter.ClearBeforeFill = true;
@@ -412,31 +304,59 @@
             // 
             this.reviewProTableAdapter.ClearBeforeFill = true;
             // 
-            // reviewDateLabel
-            // 
-            reviewDateLabel.AutoSize = true;
-            reviewDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            reviewDateLabel.Location = new System.Drawing.Point(18, 86);
-            reviewDateLabel.Name = "reviewDateLabel";
-            reviewDateLabel.Size = new System.Drawing.Size(84, 13);
-            reviewDateLabel.TabIndex = 15;
-            reviewDateLabel.Text = "Review Date:";
-            // 
             // reviewDateDateTimePicker
             // 
             this.reviewDateDateTimePicker.CustomFormat = "";
             this.reviewDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reviewBindingSource, "ReviewDate", true));
             this.reviewDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.reviewDateDateTimePicker.Location = new System.Drawing.Point(106, 83);
+            this.reviewDateDateTimePicker.Location = new System.Drawing.Point(106, 74);
             this.reviewDateDateTimePicker.Name = "reviewDateDateTimePicker";
             this.reviewDateDateTimePicker.Size = new System.Drawing.Size(105, 20);
             this.reviewDateDateTimePicker.TabIndex = 16;
+            // 
+            // appConBindingSource
+            // 
+            this.appConBindingSource.DataMember = "AppCon";
+            this.appConBindingSource.DataSource = this.researchDatabaseDataSet;
+            // 
+            // appConTableAdapter
+            // 
+            this.appConTableAdapter.ClearBeforeFill = true;
+            // 
+            // appConDataGridView
+            // 
+            this.appConDataGridView.AutoGenerateColumns = false;
+            this.appConDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.appConDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.appConDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.appConDataGridView.DataSource = this.appConBindingSource;
+            this.appConDataGridView.Location = new System.Drawing.Point(18, 405);
+            this.appConDataGridView.Name = "appConDataGridView";
+            this.appConDataGridView.Size = new System.Drawing.Size(426, 102);
+            this.appConDataGridView.TabIndex = 16;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // NewReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 578);
+            this.ControlBox = false;
+            this.Controls.Add(this.appConDataGridView);
             this.Controls.Add(reviewDateLabel);
             this.Controls.Add(this.reviewDateDateTimePicker);
             this.Controls.Add(this.appProDataGridView);
@@ -450,23 +370,23 @@
             this.Controls.Add(this.timeSpentNumericUpDown);
             this.Controls.Add(reviewerLabel);
             this.Controls.Add(this.reviewerTextBox);
-            this.Controls.Add(this.reviewBindingNavigator);
             this.Controls.Add(this.ErrorText);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "NewReview";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Review...";
             this.Load += new System.EventHandler(this.NewReview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reviewBindingNavigator)).EndInit();
-            this.reviewBindingNavigator.ResumeLayout(false);
-            this.reviewBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeSpentNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ratingNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appProDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appProBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reviewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appConBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appConDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,19 +401,6 @@
         private System.Windows.Forms.BindingSource reviewBindingSource;
         private ResearchDatabaseDataSetTableAdapters.ReviewTableAdapter reviewTableAdapter;
         private ResearchDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator reviewBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton reviewBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox reviewerTextBox;
         private System.Windows.Forms.NumericUpDown timeSpentNumericUpDown;
         private System.Windows.Forms.NumericUpDown ratingNumericUpDown;
@@ -509,5 +416,10 @@
         private ResearchDatabaseDataSetTableAdapters.ReviewConTableAdapter reviewConTableAdapter;
         private ResearchDatabaseDataSetTableAdapters.ReviewProTableAdapter reviewProTableAdapter;
         private System.Windows.Forms.DateTimePicker reviewDateDateTimePicker;
+        private System.Windows.Forms.BindingSource appConBindingSource;
+        private ResearchDatabaseDataSetTableAdapters.AppConTableAdapter appConTableAdapter;
+        private System.Windows.Forms.DataGridView appConDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
