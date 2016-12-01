@@ -48,7 +48,7 @@
             this.OKButton.Margin = new System.Windows.Forms.Padding(4);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(115, 28);
-            this.OKButton.TabIndex = 0;
+            this.OKButton.TabIndex = 3;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKClicked);
@@ -59,19 +59,19 @@
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(115, 28);
-            this.CancelButton.TabIndex = 1;
+            this.CancelButton.TabIndex = 4;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelClicked);
             // 
             // NameTextbox
             // 
-            this.NameTextbox.AcceptsTab = true;
             this.NameTextbox.Location = new System.Drawing.Point(75, 38);
             this.NameTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.NameTextbox.MaxLength = 250;
             this.NameTextbox.Name = "NameTextbox";
             this.NameTextbox.Size = new System.Drawing.Size(391, 22);
-            this.NameTextbox.TabIndex = 2;
+            this.NameTextbox.TabIndex = 0;
             // 
             // label1
             // 
@@ -80,7 +80,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Name:";
             // 
             // researchDatabaseDataSet
@@ -98,7 +98,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(281, 17);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Developer";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -122,9 +122,10 @@
             this.DeveloperCombobox.FormattingEnabled = true;
             this.DeveloperCombobox.Location = new System.Drawing.Point(20, 101);
             this.DeveloperCombobox.Margin = new System.Windows.Forms.Padding(4);
+            this.DeveloperCombobox.MaxLength = 250;
             this.DeveloperCombobox.Name = "DeveloperCombobox";
             this.DeveloperCombobox.Size = new System.Drawing.Size(280, 24);
-            this.DeveloperCombobox.TabIndex = 7;
+            this.DeveloperCombobox.TabIndex = 1;
             this.DeveloperCombobox.ValueMember = "Developer.Id";
             // 
             // releaseDate
@@ -134,7 +135,7 @@
             this.releaseDate.Margin = new System.Windows.Forms.Padding(4);
             this.releaseDate.Name = "releaseDate";
             this.releaseDate.Size = new System.Drawing.Size(143, 22);
-            this.releaseDate.TabIndex = 8;
+            this.releaseDate.TabIndex = 2;
             // 
             // label3
             // 
@@ -142,7 +143,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 17);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 10;
             this.label3.Text = "Release Date";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 

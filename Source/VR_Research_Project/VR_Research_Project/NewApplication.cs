@@ -13,10 +13,16 @@ namespace VR_Research_Project
     public partial class NewApplication : Form
     {
         private int m_iNewAppId = 0;
+        private string m_sNewAppName = "";
 
         public int NewAppId
         {
             get { return m_iNewAppId; }
+        }
+
+        public string NewAppName
+        {
+            get { return m_sNewAppName; }
         }
 
         public NewApplication()
@@ -89,11 +95,19 @@ namespace VR_Research_Project
             ResearchDatabaseDataSetTableAdapters.ApplicationTableAdapter lk_appAdapter = new ResearchDatabaseDataSetTableAdapters.ApplicationTableAdapter();
             lk_appAdapter.Insert(ls_newAppName, newDeveloperId, releaseDate.Value, 1, "", "");
             lk_appAdapter.Update(researchDatabaseDataSet);
+            lk_appAdapter.Fill(researchDatabaseDataSet.Application);
 
-            if (researchDatabaseDataSet.Application.Where(x => x.Name.ToUpper() == ls_newAppName.ToUpper()).Count() > 0)
+            var row = researchDatabaseDataSet.Application.Where(x => x.Name.ToUpper() == ls_newAppName.ToUpper()).First();
+
+            if (null == row)
             {
-                ErrorText.Text = "Application with that name already exists.";
+                ErrorText.Text = "Failed to update application to database.";
                 return;
+            }
+            else
+            {
+                m_iNewAppId = row.Id;
+                m_sNewAppName = row.Name;
             }
 
             Close();

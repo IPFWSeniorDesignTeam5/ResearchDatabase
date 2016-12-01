@@ -93,8 +93,8 @@ namespace VR_Research_Project
                     
                     lk_adapt.Update(researchDatabaseDataSet);
                 }
-                
-                RefreshData();
+
+                researchDatabaseDataSet.AcceptChanges();
             }
         }
 
@@ -104,6 +104,25 @@ namespace VR_Research_Project
             lk_new.Initialize(m_kType, researchDatabaseDataSet);
             lk_new.ShowDialog();
             RefreshData();
+        }
+
+        private void CellClicked(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (e.ColumnIndex == 1)
+            {
+                ResearchDatabaseDataSet.ApplicationGenreRelationRow boundItem = (ResearchDatabaseDataSet.ApplicationGenreRelationRow)((DataRowView)MainGridView.Rows[e.RowIndex].DataBoundItem).Row;
+
+                if (boundItem.Selected == 1)
+                    boundItem.Selected = 0;
+                else
+                    boundItem.Selected = 1;
+
+                DataGridViewCellEventArgs e2 = new DataGridViewCellEventArgs(0, e.RowIndex);
+
+                ValueChanged(sender, e2);
+            }
         }
     }
 }

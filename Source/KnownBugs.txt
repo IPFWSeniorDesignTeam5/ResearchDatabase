@@ -1,8 +1,2 @@
-Default to app name when new app.
-Select new app in list when added.
-Select/Deselect genre or mechanic when text is clicked.
-Tab into review date on new review.
-Default to reviewer text on new review.
-New application window title.
+Add platform to new Application window.
 Sort Application list by name.
-Max time spent (100)

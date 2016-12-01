@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace VR_Research_Project
@@ -61,6 +55,11 @@ namespace VR_Research_Project
             lk_new.ShowDialog(this);
 
             RefreshData();
+
+            if( lk_new.NewAppId != 0 )
+            {
+                listBox_Applications.SelectedIndex = listBox_Applications.FindStringExact(lk_new.NewAppName);
+            }
         }
 
         private bool SaveCurrentData()
