@@ -1095,9 +1095,10 @@ namespace VR_Research_Project {
                 this.columnId.Unique = true;
                 this.columnName.MaxLength = 250;
                 this.columnDeveloperId.AllowDBNull = false;
+                this.columnReleaseDate.AllowDBNull = false;
                 this.columnPlatform.AllowDBNull = false;
-                this.columnGeneralDescription.MaxLength = 550;
-                this.columnMechanicDescription.MaxLength = 550;
+                this.columnGeneralDescription.MaxLength = 1200;
+                this.columnMechanicDescription.MaxLength = 1200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5258,12 +5259,7 @@ namespace VR_Research_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime ReleaseDate {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableApplication.ReleaseDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReleaseDate\' in table \'Application\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableApplication.ReleaseDateColumn]));
                 }
                 set {
                     this[this.tableApplication.ReleaseDateColumn] = value;
@@ -5345,18 +5341,6 @@ namespace VR_Research_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNameNull() {
                 this[this.tableApplication.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReleaseDateNull() {
-                return this.IsNull(this.tableApplication.ReleaseDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReleaseDateNull() {
-                this[this.tableApplication.ReleaseDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7100,13 +7084,12 @@ namespace VR_Research_Project.ResearchDatabaseDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Application] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ([DeveloperId] = @Original_DeveloperId) AND ((@IsNull_ReleaseDate = 1 AND [ReleaseDate] IS NULL) OR ([ReleaseDate] = @Original_ReleaseDate)) AND ([Platform] = @Original_Platform) AND ((@IsNull_GeneralDescription = 1 AND [GeneralDescription] IS NULL) OR ([GeneralDescription] = @Original_GeneralDescription)) AND ((@IsNull_MechanicDescription = 1 AND [MechanicDescription] IS NULL) OR ([MechanicDescription] = @Original_MechanicDescription)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Application] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ([DeveloperId] = @Original_DeveloperId) AND ([ReleaseDate] = @Original_ReleaseDate) AND ([Platform] = @Original_Platform) AND ((@IsNull_GeneralDescription = 1 AND [GeneralDescription] IS NULL) OR ([GeneralDescription] = @Original_GeneralDescription)) AND ((@IsNull_MechanicDescription = 1 AND [MechanicDescription] IS NULL) OR ([MechanicDescription] = @Original_MechanicDescription)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DeveloperId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeveloperId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReleaseDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReleaseDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Platform", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Platform", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GeneralDescription", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GeneralDescription", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7126,7 +7109,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MechanicDescription", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MechanicDescription", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Application] SET [Name] = @Name, [DeveloperId] = @DeveloperId, [ReleaseDate] = @ReleaseDate, [Platform] = @Platform, [GeneralDescription] = @GeneralDescription, [MechanicDescription] = @MechanicDescription WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ([DeveloperId] = @Original_DeveloperId) AND ((@IsNull_ReleaseDate = 1 AND [ReleaseDate] IS NULL) OR ([ReleaseDate] = @Original_ReleaseDate)) AND ([Platform] = @Original_Platform) AND ((@IsNull_GeneralDescription = 1 AND [GeneralDescription] IS NULL) OR ([GeneralDescription] = @Original_GeneralDescription)) AND ((@IsNull_MechanicDescription = 1 AND [MechanicDescription] IS NULL) OR ([MechanicDescription] = @Original_MechanicDescription)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Application] SET [Name] = @Name, [DeveloperId] = @DeveloperId, [ReleaseDate] = @ReleaseDate, [Platform] = @Platform, [GeneralDescription] = @GeneralDescription, [MechanicDescription] = @MechanicDescription WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ([DeveloperId] = @Original_DeveloperId) AND ([ReleaseDate] = @Original_ReleaseDate) AND ([Platform] = @Original_Platform) AND ((@IsNull_GeneralDescription = 1 AND [GeneralDescription] IS NULL) OR ([GeneralDescription] = @Original_GeneralDescription)) AND ((@IsNull_MechanicDescription = 1 AND [MechanicDescription] IS NULL) OR ([MechanicDescription] = @Original_MechanicDescription)));
 SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, MechanicDescription FROM Application WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7139,7 +7122,6 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DeveloperId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeveloperId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReleaseDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReleaseDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReleaseDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Platform", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Platform", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GeneralDescription", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GeneralDescription", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7229,7 +7211,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Name, int Original_DeveloperId, global::System.Nullable<global::System.DateTime> Original_ReleaseDate, int Original_Platform, string Original_GeneralDescription, string Original_MechanicDescription) {
+        public virtual int Delete(int Original_Id, string Original_Name, int Original_DeveloperId, System.DateTime Original_ReleaseDate, int Original_Platform, string Original_GeneralDescription, string Original_MechanicDescription) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -7240,30 +7222,23 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Name));
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_DeveloperId));
-            if ((Original_ReleaseDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_ReleaseDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Platform));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_ReleaseDate));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Platform));
             if ((Original_GeneralDescription == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_GeneralDescription));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_GeneralDescription));
             }
             if ((Original_MechanicDescription == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_MechanicDescription));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_MechanicDescription));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7285,7 +7260,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int DeveloperId, global::System.Nullable<global::System.DateTime> ReleaseDate, int Platform, string GeneralDescription, string MechanicDescription) {
+        public virtual int Insert(string Name, int DeveloperId, System.DateTime ReleaseDate, int Platform, string GeneralDescription, string MechanicDescription) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7293,12 +7268,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(DeveloperId));
-            if ((ReleaseDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ReleaseDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ReleaseDate));
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Platform));
             if ((GeneralDescription == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -7332,7 +7302,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int DeveloperId, global::System.Nullable<global::System.DateTime> ReleaseDate, int Platform, string GeneralDescription, string MechanicDescription, int Original_Id, string Original_Name, int Original_DeveloperId, global::System.Nullable<global::System.DateTime> Original_ReleaseDate, int Original_Platform, string Original_GeneralDescription, string Original_MechanicDescription, int Id) {
+        public virtual int Update(string Name, int DeveloperId, System.DateTime ReleaseDate, int Platform, string GeneralDescription, string MechanicDescription, int Original_Id, string Original_Name, int Original_DeveloperId, System.DateTime Original_ReleaseDate, int Original_Platform, string Original_GeneralDescription, string Original_MechanicDescription, int Id) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7340,12 +7310,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(DeveloperId));
-            if ((ReleaseDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ReleaseDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ReleaseDate));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Platform));
             if ((GeneralDescription == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -7369,32 +7334,25 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Name));
             }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_DeveloperId));
-            if ((Original_ReleaseDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_ReleaseDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Platform));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ReleaseDate));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Platform));
             if ((Original_GeneralDescription == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_GeneralDescription));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_GeneralDescription));
             }
             if ((Original_MechanicDescription == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_MechanicDescription));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_MechanicDescription));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7415,7 +7373,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int DeveloperId, global::System.Nullable<global::System.DateTime> ReleaseDate, int Platform, string GeneralDescription, string MechanicDescription, int Original_Id, string Original_Name, int Original_DeveloperId, global::System.Nullable<global::System.DateTime> Original_ReleaseDate, int Original_Platform, string Original_GeneralDescription, string Original_MechanicDescription) {
+        public virtual int Update(string Name, int DeveloperId, System.DateTime ReleaseDate, int Platform, string GeneralDescription, string MechanicDescription, int Original_Id, string Original_Name, int Original_DeveloperId, System.DateTime Original_ReleaseDate, int Original_Platform, string Original_GeneralDescription, string Original_MechanicDescription) {
             return this.Update(Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, MechanicDescription, Original_Id, Original_Name, Original_DeveloperId, Original_ReleaseDate, Original_Platform, Original_GeneralDescription, Original_MechanicDescription, Original_Id);
         }
         
