@@ -22,3 +22,12 @@ C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Data
 C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.pdb
 C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.dll
 C:\Users\DanJa\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.pdb
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.dacpac
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.dll
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\bin\Debug\ResearchDatabaseProject.pdb
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\Model.xml
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\refactor.xml
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\postdeploy.sql
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\predeploy.sql
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.dll
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\Database_Project\ResearchDatabaseProject\obj\Debug\ResearchDatabaseProject.pdb

@@ -61,6 +61,7 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Genre.sql" />
@@ -76,6 +77,12 @@
     <Build Include="dbo\Tables\AppCon.sql" />
     <Build Include="dbo\Tables\ReviewPro.sql" />
     <Build Include="dbo\Tables\ReviewCon.sql" />
+    <Build Include="dbo\Views\VW_GenreReview.sql" />
+    <Build Include="dbo\Views\VW_Genres.sql" />
+    <Build Include="dbo\Views\VW_Mechanics.sql" />
+    <Build Include="dbo\Views\VW_MechanicReview.sql" />
+    <Build Include="dbo\Views\VW_GenrePairs.sql" />
+    <Build Include="dbo\Views\VW_MechanicPair.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ResearchDatabaseProject.publish.xml" />
