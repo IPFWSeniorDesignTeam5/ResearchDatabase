@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[VW_GenrePairs] (View)
+       [dbo].[VW_GenreReview] (View)
+       [dbo].[VW_Genres] (View)
+       [dbo].[VW_MechanicPair] (View)
+       [dbo].[VW_MechanicReview] (View)
+       [dbo].[VW_Mechanics] (View)
+
+** Supporting actions

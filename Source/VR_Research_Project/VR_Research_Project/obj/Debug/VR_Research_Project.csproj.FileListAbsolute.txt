@@ -61,3 +61,4 @@ C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_R
 C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.NewReview.resources
 C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.Properties.Resources.resources
 C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.csproj.GenerateResource.Cache
+C:\Users\Johns\Documents\GitHub\ResearchDatabase\Source\VR_Research_Project\VR_Research_Project\obj\Debug\VR_Research_Project.GraphControl.resources

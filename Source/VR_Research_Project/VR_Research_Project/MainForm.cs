@@ -100,6 +100,12 @@ namespace VR_Research_Project
             }
         }
 
+        private enum ToolbarButton
+        {
+            Applications = 1,
+            Reporting
+        }
+
         private void ToolbarButton_clicked( object sender, EventArgs e )
         {
             foreach( ToolStripButton button in MainToolStrip.Items )
@@ -114,19 +120,29 @@ namespace VR_Research_Project
             switch (((ToolStripButton)sender).Name)
             {
                 case "ToolstripApplications_button":
-                    ShowView("Applications");
+                    ShowView(ToolbarButton.Applications);
                     break;
 
                 case "ToolstripReporting_button":
-                    ShowView("Genres/Mechanics");
+                    ShowView(ToolbarButton.Reporting);
                     break;
 
                 default: break;
             }
         }
 
-        private void ShowView( string as_view )
+        private void ShowView( ToolbarButton buttonPressed )
         {
+            switch (buttonPressed)
+            {
+                case ToolbarButton.Applications:
+                    MainGraph.Visible = false;
+                    break;
+
+                case ToolbarButton.Reporting:
+                    MainGraph.Visible = true;
+                    break;
+            }
 
         }
     }
