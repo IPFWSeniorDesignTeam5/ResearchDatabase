@@ -1,0 +1,46 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[AppCon] (Table)
+       [dbo].[Application] (Table)
+       [dbo].[ApplicationGenre] (Table)
+       [dbo].[ApplicationMechanic] (Table)
+       [dbo].[ApplicationReview] (Table)
+       [dbo].[AppPro] (Table)
+       [dbo].[Developer] (Table)
+       [dbo].[Genre] (Table)
+       [dbo].[Mechanic] (Table)
+       [dbo].[Platform] (Table)
+       [dbo].[Review] (Table)
+       [dbo].[ReviewCon] (Table)
+       [dbo].[ReviewPro] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Review] (Default Constraint)
+       [dbo].[FK_Application_ToDeveloper] (Foreign Key)
+       [dbo].[FK_Application_ToPlatform] (Foreign Key)
+       [dbo].[FK_ApplicationGenre_ToApplication] (Foreign Key)
+       [dbo].[FK_ApplicationGenre_ToGenre] (Foreign Key)
+       [dbo].[FK_ApplicationMechanic_ToApplication] (Foreign Key)
+       [dbo].[FK_ApplicationMechanic_ToMechanic] (Foreign Key)
+       [dbo].[FK_ApplicationReview_ToApplication] (Foreign Key)
+       [dbo].[FK_ApplicationReview_ToReview] (Foreign Key)
+       [dbo].[FK_ReviewCon_ToReview] (Foreign Key)
+       [dbo].[FK_ReviewCon_ToPro] (Foreign Key)
+       [dbo].[FK_ReviewPro_ToReview] (Foreign Key)
+       [dbo].[FK_ReviewPro_ToPro] (Foreign Key)
+       [dbo].[VW_GenrePairs] (View)
+       [dbo].[VW_GenreReview] (View)
+       [dbo].[VW_Genres] (View)
+       [dbo].[VW_MechanicPair] (View)
+       [dbo].[VW_MechanicReview] (View)
+       [dbo].[VW_Mechanics] (View)
+
+** Supporting actions
