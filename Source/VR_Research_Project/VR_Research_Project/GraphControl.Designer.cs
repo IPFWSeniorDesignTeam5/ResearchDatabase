@@ -33,13 +33,14 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ResultsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.vW_GenresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
             this.series1Label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ChartTypeCombo = new System.Windows.Forms.ComboBox();
             this.LogoPicture = new System.Windows.Forms.PictureBox();
-            this.vW_GenresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.researchDatabaseDataSet = new VR_Research_Project.ResearchDatabaseDataSet();
             this.vW_GenresTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.VW_GenresTableAdapter();
             this.vW_MechanicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vW_MechanicsTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.VW_MechanicsTableAdapter();
@@ -53,9 +54,9 @@
             this.vW_MechanicReviewTableAdapter = new VR_Research_Project.ResearchDatabaseDataSetTableAdapters.VW_MechanicReviewTableAdapter();
             ReportSeriesCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ResultsChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_GenresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_MechanicsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_GenreReviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_GenrePairsBindingSource)).BeginInit();
@@ -88,6 +89,7 @@
             this.ResultsChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.ResultsChart.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.ResultsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
+            chartArea1.AxisX.Interval = 1D;
             chartArea1.AxisX.IsReversed = true;
             chartArea1.AxisX.LabelAutoFitMaxFontSize = 24;
             chartArea1.AxisX.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)(((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
@@ -102,11 +104,14 @@
             chartArea1.AxisX.MajorTickMark.Interval = 0D;
             chartArea1.AxisX.MinorTickMark.Interval = 1D;
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("Hack", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX2.Interval = 1D;
             chartArea1.AxisY.Title = "Use Count";
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Hack", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            chartArea1.AxisY2.Title = "Average Rating";
             chartArea1.Name = "ChartArea1";
             this.ResultsChart.ChartAreas.Add(chartArea1);
-            this.ResultsChart.DataSource = this.vW_GenresBindingSource;
+            this.ResultsChart.DataSource = this.vW_MechanicReviewBindingSource;
             legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.ResultsChart.Legends.Add(legend1);
@@ -124,11 +129,29 @@
             series1.ShadowOffset = 2;
             series1.XValueMember = "Description";
             series1.YValueMembers = "Relations";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series2.Enabled = false;
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            series2.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
             this.ResultsChart.Series.Add(series1);
+            this.ResultsChart.Series.Add(series2);
             this.ResultsChart.Size = new System.Drawing.Size(980, 625);
             this.ResultsChart.TabIndex = 0;
             this.ResultsChart.Text = "Results";
             this.ResultsChart.Visible = false;
+            // 
+            // vW_GenresBindingSource
+            // 
+            this.vW_GenresBindingSource.DataMember = "VW_Genres";
+            this.vW_GenresBindingSource.DataSource = this.researchDatabaseDataSet;
+            // 
+            // researchDatabaseDataSet
+            // 
+            this.researchDatabaseDataSet.DataSetName = "ResearchDatabaseDataSet";
+            this.researchDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // series1Label
             // 
@@ -172,16 +195,6 @@
             this.LogoPicture.Size = new System.Drawing.Size(317, 315);
             this.LogoPicture.TabIndex = 5;
             this.LogoPicture.TabStop = false;
-            // 
-            // vW_GenresBindingSource
-            // 
-            this.vW_GenresBindingSource.DataMember = "VW_Genres";
-            this.vW_GenresBindingSource.DataSource = this.researchDatabaseDataSet;
-            // 
-            // researchDatabaseDataSet
-            // 
-            this.researchDatabaseDataSet.DataSetName = "ResearchDatabaseDataSet";
-            this.researchDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // vW_GenresTableAdapter
             // 
@@ -247,9 +260,9 @@
             this.Size = new System.Drawing.Size(1007, 700);
             this.Resize += new System.EventHandler(this.Control_resized);
             ((System.ComponentModel.ISupportInitialize)(this.ResultsChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_GenresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.researchDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_MechanicsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_GenreReviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vW_GenrePairsBindingSource)).EndInit();

@@ -24,7 +24,10 @@ namespace VR_Research_Project
             ResultsChart.Series[0].Name = combo.Text + "s";
             
             ResultsChart.Visible = false;
-            
+            ResultsChart.Series[1].Enabled = false;
+            ResultsChart.Series[1].XValueMember = "";
+            ResultsChart.Series[1].YValueMembers = "";
+
             switch (combo.Text)
             {
                 case "Genre":
@@ -70,18 +73,25 @@ namespace VR_Research_Project
                     ResultsChart.DataSource = vW_GenreReviewBindingSource;
                     ResultsChart.Series[0].XValueMember = "Description";
                     ResultsChart.Series[0].YValueMembers = "ReviewTime";
+                    ResultsChart.Series[1].Enabled = true;
+                    ResultsChart.Series[1].XValueMember = "Description";
+                    ResultsChart.Series[1].YValueMembers = "AverageRating";
                     ResultsChart.DataBind();
                     ResultsChart.ChartAreas[0].AxisY.Title = "Time Spent (m)";
                     ResultsChart.ChartAreas[0].AxisX.Title = "Genre Description";
+                    ResultsChart.Series[1].Enabled = true;
                     break;
                 case "Mechanic Review":
                     vW_MechanicReviewTableAdapter.Fill(researchDatabaseDataSet.VW_MechanicReview);
                     ResultsChart.DataSource = vW_MechanicReviewBindingSource;
+                    ResultsChart.Series[1].Enabled = true;
+                    ResultsChart.Series[1].XValueMember = "Description";
+                    ResultsChart.Series[1].YValueMembers = "AverageRating";
                     ResultsChart.Series[0].XValueMember = "Description";
                     ResultsChart.Series[0].YValueMembers = "ReviewTime";
                     ResultsChart.DataBind();
                     ResultsChart.ChartAreas[0].AxisY.Title = "Time Spent (m)";
-                    ResultsChart.ChartAreas[0].AxisX.Title = "Genre Description";
+                    ResultsChart.ChartAreas[0].AxisX.Title = "Mechanic Description";
                     break;
             }
             
@@ -93,17 +103,17 @@ namespace VR_Research_Project
             switch (ChartTypeCombo.Text)
             {
                 case "Bar":
-                    ResultsChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+                    ResultsChart.Series[0].ChartType = ResultsChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
                     ResultsChart.Series[0].MarkerSize = 1;
                     ResultsChart.ChartAreas[0].AxisX.IsReversed = true;
                     break;
                 case "Point":
-                    ResultsChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+                    ResultsChart.Series[0].ChartType = ResultsChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
                     ResultsChart.Series[0].MarkerSize = 10;
                     ResultsChart.ChartAreas[0].AxisX.IsReversed = false;
                     break;
                 case "Pie":
-                    ResultsChart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+                    ResultsChart.Series[0].ChartType = ResultsChart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
                     ResultsChart.Series[0].MarkerSize = 1;
                     ResultsChart.ChartAreas[0].AxisX.IsReversed = false;
                     break;

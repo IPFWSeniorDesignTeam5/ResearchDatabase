@@ -5783,7 +5783,7 @@ namespace VR_Research_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_GenreReviewRow AddVW_GenreReviewRow(string Description, int ReviewTime, int AverageRating) {
+            public VW_GenreReviewRow AddVW_GenreReviewRow(string Description, int ReviewTime, decimal AverageRating) {
                 VW_GenreReviewRow rowVW_GenreReviewRow = ((VW_GenreReviewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Description,
@@ -5823,7 +5823,7 @@ namespace VR_Research_Project {
                 base.Columns.Add(this.columnDescription);
                 this.columnReviewTime = new global::System.Data.DataColumn("ReviewTime", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReviewTime);
-                this.columnAverageRating = new global::System.Data.DataColumn("AverageRating", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAverageRating = new global::System.Data.DataColumn("AverageRating", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAverageRating);
                 this.columnDescription.AllowDBNull = false;
                 this.columnDescription.MaxLength = 250;
@@ -6586,7 +6586,7 @@ namespace VR_Research_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_MechanicReviewRow AddVW_MechanicReviewRow(string Description, int ReviewTime, int AverageRating) {
+            public VW_MechanicReviewRow AddVW_MechanicReviewRow(string Description, int ReviewTime, decimal AverageRating) {
                 VW_MechanicReviewRow rowVW_MechanicReviewRow = ((VW_MechanicReviewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Description,
@@ -6626,7 +6626,7 @@ namespace VR_Research_Project {
                 base.Columns.Add(this.columnDescription);
                 this.columnReviewTime = new global::System.Data.DataColumn("ReviewTime", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReviewTime);
-                this.columnAverageRating = new global::System.Data.DataColumn("AverageRating", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAverageRating = new global::System.Data.DataColumn("AverageRating", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAverageRating);
                 this.columnDescription.MaxLength = 250;
             }
@@ -8367,10 +8367,10 @@ namespace VR_Research_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int AverageRating {
+            public decimal AverageRating {
                 get {
                     try {
-                        return ((int)(this[this.tableVW_GenreReview.AverageRatingColumn]));
+                        return ((decimal)(this[this.tableVW_GenreReview.AverageRatingColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'AverageRating\' in table \'VW_GenreReview\' is DBNull.", e);
@@ -8579,10 +8579,10 @@ namespace VR_Research_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int AverageRating {
+            public decimal AverageRating {
                 get {
                     try {
-                        return ((int)(this[this.tableVW_MechanicReview.AverageRatingColumn]));
+                        return ((decimal)(this[this.tableVW_MechanicReview.AverageRatingColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'AverageRating\' in table \'VW_MechanicReview\' is DBNull.", e);
@@ -9565,7 +9565,7 @@ namespace VR_Research_Project.ResearchDatabaseDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Application] ([Name], [DeveloperId], [ReleaseDate], [Platform], [GeneralDescription], [MechanicDescription]) VALUES (@Name, @DeveloperId, @ReleaseDate, @Platform, @GeneralDescription, @MechanicDescription);
-SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, MechanicDescription FROM Application WHERE (Id = SCOPE_IDENTITY())";
+SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, MechanicDescription FROM Application WHERE (Id = SCOPE_IDENTITY()) ORDER BY Name";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeveloperId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeveloperId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9576,7 +9576,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Application] SET [Name] = @Name, [DeveloperId] = @DeveloperId, [ReleaseDate] = @ReleaseDate, [Platform] = @Platform, [GeneralDescription] = @GeneralDescription, [MechanicDescription] = @MechanicDescription WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ([DeveloperId] = @Original_DeveloperId) AND ([ReleaseDate] = @Original_ReleaseDate) AND ([Platform] = @Original_Platform) AND ((@IsNull_GeneralDescription = 1 AND [GeneralDescription] IS NULL) OR ([GeneralDescription] = @Original_GeneralDescription)) AND ((@IsNull_MechanicDescription = 1 AND [MechanicDescription] IS NULL) OR ([MechanicDescription] = @Original_MechanicDescription)));
-SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, MechanicDescription FROM Application WHERE (Id = @Id)";
+SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, MechanicDescription FROM Application WHERE (Id = @Id) ORDER BY Name";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeveloperId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeveloperId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9611,7 +9611,7 @@ SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechani
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Name, DeveloperId, ReleaseDate, Platform, GeneralDescription, Mechanic" +
-                "Description FROM dbo.Application";
+                "Description FROM dbo.Application\r\nORDER BY Name ASC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
